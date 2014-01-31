@@ -15,11 +15,11 @@ python_pip "awscli"
 
 
 # create document root
-directory '/home/ubuntu/.aws/' do
+directory '/home/vagrant/.aws/' do
   action :create
   recursive true
 end
 
-template '/home/ubuntu/.aws/config' do
+template '/home/vagrant/.aws/config' do
   source 'aws-config.erb'
 end
