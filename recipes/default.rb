@@ -13,4 +13,6 @@ include_recipe "python"
 #add the awscli
 python_pip "awscli"
 
-
+template "/home/ubuntu/.aws/config" do
+  source 'aws-config.erb'
+end
