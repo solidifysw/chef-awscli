@@ -23,3 +23,11 @@ end
 template '/home/vagrant/.aws/config' do
   source 'aws-config.erb'
 end
+
+bash "some_commands" do
+    user "root"
+    cwd "/tmp"
+    code <<-EOT
+       echo "complete -C aws_completer aws" >> /home/vagrant/.bashrc
+    EOT
+end
