@@ -15,12 +15,12 @@ python_pip "awscli"
 
 
 # create document root
-directory '/home/vagrant/.aws/' do
+directory '/home/ubuntu/.aws/' do
   action :create
   recursive true
 end
 
-template '/home/vagrant/.aws/config' do
+template '/home/ubuntu/.aws/config' do
   source 'aws-config.erb'
 end
 
@@ -28,6 +28,6 @@ bash "some_commands" do
     user "root"
     cwd "/tmp"
     code <<-EOT
-       echo "complete -C aws_completer aws" >> /home/vagrant/.bashrc
+       echo "complete -C aws_completer aws" >> /home/ubuntu/.bashrc
     EOT
 end
